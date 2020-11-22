@@ -139,6 +139,20 @@ with the corresponding `add` call:
 poetry add https://example.com/my-package-0.1.0.tar.gz
 ```
 
+## `source` dependencies
+To dependent on a package located in the private repositry `my-private-repo`,
+you can use `source` property:
+```toml
+[[tool.poetry.source]]
+name = "my-private-repo"
+url = "https://example.com/"
+secondary = true
+
+[tool.poetry.dependencies]
+my-cool-package = { version = "*", source = "my-private-repo" }
+```
+By setting `secondary = true`, poetry will still pull other dependencies from Pypi.
+See [Using a private repository](repositories.md#using-a-private-repository) for futher information.
 
 ## Python restricted dependencies
 
@@ -164,7 +178,6 @@ via the `markers` property:
 [tool.poetry.dependencies]
 pathlib2 = { version = "^2.2", markers = "python_version ~= '2.7' or sys_platform == 'win32'" }
 ```
-
 
 ## Multiple constraints dependencies
 
