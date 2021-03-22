@@ -140,19 +140,18 @@ poetry add https://example.com/my-package-0.1.0.tar.gz
 ```
 
 ## `source` dependencies
-To dependent on a package located in the private repositry `my-private-repo`,
+To depend on a package from an [alternate repository](/docs/repositories/#install-dependencies-from-a-private-repository)
 you can use `source` property:
 ```toml
 [[tool.poetry.source]]
-name = "my-private-repo"
-url = "https://example.com/"
+name = "foo"
+url = "https://foo.bar/simple/"
 secondary = true
 
 [tool.poetry.dependencies]
-my-cool-package = { version = "*", source = "my-private-repo" }
-```
-By setting `secondary = true`, poetry will still pull other dependencies from Pypi.
-See [Using a private repository](repositories.md#using-a-private-repository) for futher information.
+my-cool-package = { version = "*", source = "foo" }
+!!!note
+    In this example, we expect `foo` to be configured conrrectly. See [using a private repository](repositories.md#using-a-private-repository) for futher information.
 
 ## Python restricted dependencies
 
