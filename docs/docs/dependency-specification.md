@@ -155,7 +155,8 @@ my-cool-package = { version = "*", source = "foo" }
 ```
 
 !!!note
-    In this example, we expect `foo` to be configured conrrectly. See [using a private repository](repositories.md#using-a-private-repository) for futher information.
+
+    In this example, we expect `foo` to be configured correctly. See [using a private repository](repositories.md#using-a-private-repository) for futher information.
 
 ## Python restricted dependencies
 
