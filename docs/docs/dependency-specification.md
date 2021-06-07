@@ -140,8 +140,10 @@ poetry add https://example.com/my-package-0.1.0.tar.gz
 ```
 
 ## `source` dependencies
-To depend on a package from an [alternate repository](/docs/repositories/#install-dependencies-from-a-private-repository)
-you can use `source` property:
+
+To depend on a package from an [alternate repository](/docs/repositories/#install-dependencies-from-a-private-repository),
+you can use the `source` property:
+
 ```toml
 [[tool.poetry.source]]
 name = "foo"
@@ -150,6 +152,8 @@ secondary = true
 
 [tool.poetry.dependencies]
 my-cool-package = { version = "*", source = "foo" }
+```
+
 !!!note
     In this example, we expect `foo` to be configured conrrectly. See [using a private repository](repositories.md#using-a-private-repository) for futher information.
 
